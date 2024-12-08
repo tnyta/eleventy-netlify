@@ -58,7 +58,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   };
 
   try {
-    const response = await fetch('/.netlify/functions/contact-form', {
+    const response = await fetch('/.netlify/functions/send-contact-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -80,6 +80,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   }
 });
 </script>
+
 
   </main>
   <footer>
