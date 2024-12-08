@@ -1,0 +1,8 @@
+
+> my-project@1.0.0 build
+> eleventy
+
+[11ty] Writing ./_site/destinations/index.html from ./destinations.njk
+[11ty] Writing ./_site/index.html from ./index.njk
+[11ty] Writing ./_site/lab/index.html from ./lab.njk
+[11ty] Copied 1 Wrote 3 files in 0.06 seconds (v3.0.0)

@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<article>
+  <h2>{{ title }}</h2>
+  <p>Published on {{ date | date('MMMM D, YYYY') }}</p>
+  {% if feature_image %}
+    <img src="{{ feature_image }}" alt="{{ title }}" />
+  {% endif %}
+  <div>
+    {{ content | safe }}
+  </div>
+</article>

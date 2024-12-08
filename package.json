@@ -1,0 +1,24 @@
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.4",
+    "@tryghost/content-api": "^1.11.21",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "luxon": "^3.5.0",
+    "postmark": "^4.0.5"
+  }
+}

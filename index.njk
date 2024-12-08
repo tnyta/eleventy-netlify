@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Home
+---
+
+<h2>Top Adventure Travel Destinations</h2>
+<p>Explore thrilling places from around the world! Click on each destination to discover more..</p>
+
+<!-- Ensure that 'collections.destinationPosts' is accessible globally -->
+<div class="preview-container">
+  {% for post in collections.destinationPosts %}
+    {% if loop.index <= 2 %}
+      <div class="preview-card">
+        <img src="{{ post.feature_image }}" alt="{{ post.title }}" class="preview-image">
+        <div class="preview-content">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.excerpt }}</p>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<a href="/destinations/" class="view-more">View More</a>

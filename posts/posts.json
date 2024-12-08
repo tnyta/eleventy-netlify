@@ -1,0 +1,16 @@
+{
+    "layout": "post.njk",
+    "pagination": {
+      "data": "ghost.posts",
+      "size": 1,
+      "alias": "post"
+    },
+    "permalink": "/posts/{{ post.slug }}/",
+    "eleventyComputed": {
+      "title": "{{ post.title }}",
+      "date": "{{ post.published_at }}",
+      "content": "{{ post.html }}",
+      "tags": "{{ post.tags }}",
+      "feature_image": "{{ post.feature_image }}"
+    }
+  }

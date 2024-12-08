@@ -1,0 +1,11 @@
+services:
+  ghost:
+    image: ghost:alpine
+    restart: always
+    environment:
+      NODE_ENV: development
+      database__connection__filename: '/var/lib/ghost/content/data/ghost.db'
+    ports:
+      - "2368:2368"      
+    volumes:
+      - "../content:/var/lib/ghost/content"
