@@ -1,27 +1,32 @@
-// netlify/functions/send-contact-email.js
 const postmark = require('postmark');
 
 exports.handler = async (event) => {
+  console.log("Received event:", event);  // Logs the entire event object
+
   if (event.httpMethod !== 'POST') {
+    console.log("Error: Method not allowed");
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const client = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
-  const { name, email, message } = JSON.parse(event.body);
-
   try {
-    await client.sendEmail({
+    const { name, email, message } = JSON.parse(event.body);
+    console.log("Parsed body:", { name, email, message });  // Logs parsed data
+
+    const client = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
+    const emailResponse = await client.sendEmail({
       "From": "talent.nyota@dcmail.ca",
       "To": "spark01234@icloud.com",
       "Subject": "New Contact Message",
       "TextBody": `Message from ${name} (${email}): ${message}`
     });
 
+    console.log("Email sent response:", emailResponse);  // Logs response from Postmark
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "Email sent successfully!" })
     };
   } catch (error) {
+    console.error("Failed to send email:", error);  // Logs detailed errors
     return {
       statusCode: 500,
       body: JSON.stringify({ error: error.message })
