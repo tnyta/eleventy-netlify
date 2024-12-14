@@ -329,6 +329,7 @@ body::before {
 #spinner, #confirmation {
   text-align: center;
   margin-top: 2rem;
-  font-size: 1.2em;
+  font-size: 3.2em;
+  color: #a10000;
 }
 

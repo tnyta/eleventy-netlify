@@ -16,8 +16,9 @@ exports.handler = async (event) => {
     const emailResponse = await client.sendEmail({
       "From": "talent.nyota@dcmail.ca",
       "To": "spark01234@icloud.com",
-      "Subject": "New Contact Message",
-      "TextBody": `Message from ${name} (${email}): ${message}`
+      "Cc": "adam.kunz+inft@durhamcollege.ca",
+      "Subject": `AUTO: New Contact Message from ${name}`,
+      "TextBody": `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     });
 
     console.log("Email sent response:", emailResponse);  // Logs response from Postmark
